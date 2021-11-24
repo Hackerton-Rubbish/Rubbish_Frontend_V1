@@ -1,6 +1,5 @@
 import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { VisualizePage, ChallengePage, ConnectionPage } from "../pages";
 import LoginPage from "../pages/Login";
 
