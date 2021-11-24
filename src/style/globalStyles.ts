@@ -87,7 +87,7 @@ export const reset = css`
     border: 0;
     font-size: 100%;
     font: inherit;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Roboto', sans-serif;
     vertical-align: baseline;
     font-smooth: antialiased;
   }
