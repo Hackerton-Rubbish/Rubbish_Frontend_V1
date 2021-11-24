@@ -34,7 +34,7 @@ export const IDInput = styled.input`
   width: 30vw;
   height: 3.5vh;
   font-size: 1.1rem;
-  border: 0px solid ${color.white};
+  border: 0px solid ${color.gray000};
   border-bottom: 2px solid ${color.mainGray};
 
   &::placeholder {
@@ -61,7 +61,7 @@ export const PWInput = styled.input`
   width: 30vw;
   height: 3.5vh;
   font-size: 1.1rem;
-  border: 0px solid ${color.white};
+  border: 0px solid ${color.gray000};
   border-bottom: 2px solid ${color.mainGray};
 
   &::placeholder {
@@ -97,8 +97,8 @@ export const LoginButton = styled.button`
   height: 7vh;
   font-size: 1.5rem;
   font-weight: bold;
-  color: ${color.white};
+  color: ${color.gray000};
   border-radius: 5px;
-  border: 0px solid ${color.white};
+  border: 0px solid ${color.gray000};
   background-color: ${color.mainBlue};
 `;
