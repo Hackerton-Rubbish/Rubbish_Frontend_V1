@@ -3,7 +3,7 @@ import { FC } from "react";
 const Header: FC = (): JSX.Element => {
   return (
     <>
-      <div>Connect</div>
+      <div>Header</div>
     </>
   );
 };

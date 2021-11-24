@@ -4,7 +4,7 @@ import * as S from "./styles";
 const Visualize: FC = (): JSX.Element => {
   return (
     <>
-      <div>Connect</div>
+      <div>Visualize</div>
     </>
   );
 };

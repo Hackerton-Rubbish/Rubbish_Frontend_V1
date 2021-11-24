@@ -9,8 +9,8 @@ const RootRouter = (): JSX.Element => {
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
           <Route path="/" element={<VisualizePage />} />
-          <Route path="/" element={<ChallengePage />} />
-          <Route path="/" element={<ConnectionPage />} />
+          <Route path="/challenge" element={<ChallengePage />} />
+          <Route path="/connection" element={<ConnectionPage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
