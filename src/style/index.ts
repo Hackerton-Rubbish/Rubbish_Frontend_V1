@@ -16,4 +16,8 @@ export const color = {
   lighterGray: "#F2F2F7",
   hoverBlue: "#075DB2",
   hoverBlack: "#4B4B4D",
+  resolutionBlue: "#233574",
+  havelockBlue: '#5F79D3',
+  portage: '#8498DA',
+  solitude: '#E8EEF6',
 };
