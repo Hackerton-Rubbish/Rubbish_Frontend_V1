@@ -1,4 +1,4 @@
-import instance from "../Default";
+import { instance } from "../Default";
 
 export const getMyLitter = async (year : number, month : number) => {
   try {

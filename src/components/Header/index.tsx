@@ -24,17 +24,6 @@ const Header: FC = (): JSX.Element => {
           </S.NavList>
           <S.NavList>
             <S.NLink
-              to="/challenge"
-              style={({ isActive }) => ({
-                borderBottom: isActive ? `2px solid ${color.blue000}` : "none",
-                marginBottom: isActive ? "0px" : "2px",
-              })}
-            >
-              첼린지
-            </S.NLink>
-          </S.NavList>
-          <S.NavList>
-            <S.NLink
               to="/connection"
               style={({ isActive }) => ({
                 borderBottom: isActive ? `2px solid ${color.blue000}` : "none",

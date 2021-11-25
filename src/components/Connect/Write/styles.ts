@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { color } from "../../../style";
 
-export const Wrapper = styled.div`
-  width: 800px;
+export const Wrapper = styled.form`
+  width: 1000px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
 export const ImageInputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
 `;
 
 export const ImageInput = styled.input`
@@ -25,12 +25,17 @@ export const ImageInput = styled.input`
     cursor: pointer;
     padding: 4px 10px;
     border-radius: 5px;
+    height: 45px;
+    font-size: 16px;
   }
 `;
 
 export const PreviewImage = styled.div`
   min-width: 350px;
   min-height: 250px;
+  max-width: 350px;
+  max-height: 250px;
+  overflow: hidden;
   background-color: ${color.gray100};
   padding: 15px;
   border-radius: 5px;
@@ -38,25 +43,25 @@ export const PreviewImage = styled.div`
   justify-content: center;
   align-items: center;
   img {
-    width: 100%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
   }
 `;
 
 export const InputBoxContainer = styled.div`
-  height: 300px;
+  height: 350px;
+  width: 460px;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
-  place-items: center;
   gap: 20px;
   input {
     outline: none;
     text-decoration: none;
     border: none;
     border-bottom: 1px solid #949494;
-    width: 400px;
+    width: 100%;
     font-size: 16px;
-    padding: 8px 0;
+    padding: 8px 0px;
   }
 `;
 
@@ -67,18 +72,18 @@ export const InputBox = styled.div`
 
 export const InputTitle = styled.div`
   font-size: 20px;
-  width: 45px;
+  width: 150px;
   font-weight: 600;
   padding: 8px 0;
+  display: flex;
+  align-items: center;
 `;
 
-export const ShareButton = styled.div`
-  display: flex;
-  justify-content: center;
+export const ShareButton = styled.input`
   align-items: center;
-  width: 100%;
   background-color: ${color.blue000};
   height: 50px;
+  padding: 0 30px;
   color: ${color.gray000};
   border-radius: 5px;
   cursor: pointer;
