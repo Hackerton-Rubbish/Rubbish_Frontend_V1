@@ -21,7 +21,7 @@ const Write: FC = (): JSX.Element => {
         <S.PreviewImage>
           <img src={fileImage} />
         </S.PreviewImage>
-        <input type="file" accept="image/*" onChange={handFileChange} />
+        <S.ImageInput type="file" accept="image/*" onChange={handFileChange} />
       </S.ImageInputContainer>
       <S.InputBoxContainer>
         <S.InputBox>
