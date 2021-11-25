@@ -22,7 +22,6 @@ const Login: FC = (): JSX.Element => {
       localStorage.setItem('access_token', res.data.token);
       history('/');
     }).catch((error) => {
-      console.log(error);
       if (error.response.status === 400) {
         ErrorAlert('Error!', '아이디 또는 비밀번호가 입력되지 않았습니다.');
       } else if (error.response.status === 401) {
