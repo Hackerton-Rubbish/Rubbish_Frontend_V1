@@ -121,6 +121,17 @@ export const MathUnit = styled.div<{background : string}>`
   background-color: ${props => props.background};
 `;
 
+export const CloseButton = styled.div`
+    width: 16px;
+    display: flex;
+    color: black;
+    align-items: center;
+    & img {
+        width: 16px;
+        height: 16px;
+    }
+`;
+
 export const Warning = styled.div<{display : string}>`
     font-size: 18px;
     color: ${color.red000};

@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import * as S from "./styles";
-import { Litter, Plus, Minus } from "../../assets";
+import { Litter, Plus, Minus, Close } from "../../assets";
 import { color } from "../../style";
 
 const Visualize: FC = (): JSX.Element => {
@@ -31,9 +31,7 @@ const Visualize: FC = (): JSX.Element => {
           </S.InformationText>
           <S.Amount>{testValue}L</S.Amount>
           <S.AddAmount
-            onClick={() =>
-              setAddClicked(addClicked === "false" ? "true" : "false")
-            }
+            onClick={() => setAddClicked("true")}
             width={addClicked === "false" ? "190px" : "600px"}
             background={
               addClicked === "false" ? `${color.blue000}` : `${color.gray000}`
@@ -77,6 +75,9 @@ const Visualize: FC = (): JSX.Element => {
                           </S.LitterUnit>
                         );
                       })}
+                      <S.CloseButton onClick={() => setAddClicked("false")}>
+                        <img src={Close} />
+                      </S.CloseButton>
                     </S.UnitBox>
                   </>
                 ),
