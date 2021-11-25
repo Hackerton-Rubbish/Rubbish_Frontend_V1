@@ -7,10 +7,10 @@ const refresh = async (config: any): Promise<AxiosRequestConfig> => {
   return config;
 };
 
-const refreshError = (err: any) => {
-  localStorage.removeItem("expireAt");
-  localStorage.removeItem("access_token");
-  localStorage.removeItem("refresh_token");
-};
+// const refreshError = (err: any) => {
+//   localStorage.removeItem("expireAt");
+//   localStorage.removeItem("access_token");
+//   localStorage.removeItem("refresh_token");
+// };
 
-export { refresh, refreshError };
+export { refresh };
