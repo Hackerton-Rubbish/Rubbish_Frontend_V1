@@ -4,11 +4,12 @@ import { Flag, ImageInput } from "../../../assets";
 
 const Write: FC = (): JSX.Element => {
   const [selectedFile, setSelectedFile] = useState("");
+  const [fileImage, setFileImage] = useState<any>();
 
   const handFileChange = (e: any) => {
     setSelectedFile(e.target.files[0]);
-  };
-
+    setFileImage(URL.createObjectURL(e.target.files[0]));
+    
   const handleFileUpload = () => {
     //     const formData = new FormData();
     //     formData.append("userfile", selectedFile, selectedFile.name);
@@ -18,9 +19,9 @@ const Write: FC = (): JSX.Element => {
     <S.Wrapper>
       <S.ImageInputContainer>
         <S.PreviewImage>
-            no data
+            <img src={fileImage}/>
         </S.PreviewImage>
-        <input type="file" accept="image/*" onChange={handFileChange} />
+        <input type="file" accept="image/*" onChange={handFileChange}/>
       </S.ImageInputContainer>
       <S.InputBoxContainer>
         <S.InputBox>
@@ -35,7 +36,7 @@ const Write: FC = (): JSX.Element => {
             <S.InputTitle>지역</S.InputTitle>
             <input placeholder="거래하시는 지역이 어디인가요"/>
         </S.InputBox>
-        <S.ShareButton>나눔하기</S.ShareButton>
+        <S.ShareButton onClick={handleFileUpload}>나눔하기</S.ShareButton>
       </S.InputBoxContainer>
     </S.Wrapper>
   );

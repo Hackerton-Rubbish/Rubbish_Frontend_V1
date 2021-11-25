@@ -26,6 +26,10 @@ export const PreviewImage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const InputBoxContainer = styled.div`
@@ -51,6 +55,7 @@ export const InputBox = styled.div`
 
 export const InputTitle = styled.div`
   font-size: 24px;
+  width: 45px;
 `;
 
 export const ShareButton = styled.div`
