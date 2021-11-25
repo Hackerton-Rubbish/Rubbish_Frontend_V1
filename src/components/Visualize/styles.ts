@@ -16,21 +16,21 @@ export const VisualizeContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  gap: 80px;
+  gap: 100px;
 `;
 
-export const LitterBackground = styled.div<{width : string}>`
+export const LitterBackground = styled.div<{width : string, background : string}>`
   width: 400px;
   height: 400px;
   border-radius: 100%;
-  background-color: ${color.blue000};
+  background-color: ${props => props.background};
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 
   img {
-      transition: 1s;
+      transition: 0.5s;
       width: ${props => (props.width)};
       max-height: 70%;
   }
@@ -101,7 +101,7 @@ export const LitterUnit = styled.div`
 export const UnitBox = styled.div`
   display: flex;
   height: 70%;
-  gap: 45px;
+  gap: 30px;
 `;
 
 export const Arithmatic = styled.div`
@@ -136,7 +136,7 @@ export const Warning = styled.div<{display : string}>`
     font-size: 18px;
     color: ${color.red000};
     position: absolute;
-    transform: translateY(150%);
+    transform: translateY(190%);
     bottom: 0;
     display: ${props => props.display}; 
 `;
