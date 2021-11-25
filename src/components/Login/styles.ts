@@ -4,6 +4,7 @@ import { color } from '../../style';
 
 export const LoginForm = styled.div`
   position: relative;
+  width: 40vw;
   left: 10vw;
   top: 14vh;
 `;
