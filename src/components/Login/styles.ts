@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import { color } from '../../style';
 
-export const LoginForm = styled.div`
+export const LoginForm = styled.form`
   position: relative;
   float: left;
   width: 40vw;
@@ -65,6 +65,7 @@ export const PWInput = styled.input`
   font-size: 1.1rem;
   border: 0px solid ${color.gray000};
   border-bottom: 2px solid ${color.mainGray};
+  -webkit-text-security: disc;
 
   &::placeholder {
     color: ${color.mainGray};

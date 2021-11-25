@@ -53,6 +53,27 @@ export const RegisterInput = styled.input`
   }
 `;
 
+export const RegisterPWInput = styled.input`
+  position: relative;
+  top: 1.5vh;
+  width: 30vw;
+  height: 3.5vh;
+  font-size: 1.1rem;
+  border: 0px;
+  border-bottom: 2px solid ${color.mainGray};
+  -webkit-text-security: disc;
+
+  &::placeholder {
+    color: ${color.mainGray};
+    font-size: 1.1rem;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid ${color.mainBlue};
+  }
+`;
+
 export const RegisterMiddleInput = styled.input`
   position: relative;
   top: 1.5vh;
@@ -92,7 +113,7 @@ export const RegisterSmallForm = styled.div`
   float: left;
   top: 10vh;
   width: 15vw;
-  margin-right: 3vw;
+  margin-right: 2vw;
 `;
 
 export const SelectForm = styled.select`
