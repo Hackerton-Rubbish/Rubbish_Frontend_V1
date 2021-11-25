@@ -19,7 +19,7 @@ export const VisualizeContainer = styled.div`
   gap: 80px;
 `;
 
-export const LitterBackground = styled.div`
+export const LitterBackground = styled.div<{width : string}>`
   width: 400px;
   height: 400px;
   border-radius: 100%;
@@ -28,6 +28,12 @@ export const LitterBackground = styled.div`
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  img {
+      transition: 1s;
+      width: ${props => (props.width)};
+      max-height: 70%;
+  }
 `;
 
 export const DescriptionBox = styled.div`
@@ -113,4 +119,13 @@ export const MathUnit = styled.div<{background : string}>`
   height: 40px;
   border-radius: 100%;
   background-color: ${props => props.background};
+`;
+
+export const Warning = styled.div<{display : string}>`
+    font-size: 18px;
+    color: ${color.red000};
+    position: absolute;
+    transform: translateY(150%);
+    bottom: 0;
+    display: ${props => props.display}; 
 `;

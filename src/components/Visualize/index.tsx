@@ -6,6 +6,7 @@ import { color } from "../../style";
 const Visualize: FC = (): JSX.Element => {
   const [addClicked, setAddClicked] = useState<string>("false");
   const [ArithIndex, setArithIndex] = useState(0);
+  const [testValue, setTestValue] = useState(0);
 
   const LitterUnitArr = ["1", "5", "10"];
   const setMath = (e: any) => {
@@ -14,12 +15,13 @@ const Visualize: FC = (): JSX.Element => {
 
   const HandleLitterUnit = (value: string) => {
     setAddClicked("false");
+    setTestValue(testValue + Number(value));
   };
 
   return (
     <S.Wrapper>
       <S.VisualizeContainer>
-        <S.LitterBackground>
+        <S.LitterBackground width={`calc(${testValue}%)`}>
           <img src={Litter} />
         </S.LitterBackground>
         <S.DescriptionBox>
@@ -27,7 +29,7 @@ const Visualize: FC = (): JSX.Element => {
             내가 이번달 배출한&nbsp;
             <span>쓰레기양</span>
           </S.InformationText>
-          <S.Amount>23L</S.Amount>
+          <S.Amount>{testValue}L</S.Amount>
           <S.AddAmount
             onClick={() =>
               setAddClicked(addClicked === "false" ? "true" : "false")
@@ -81,6 +83,9 @@ const Visualize: FC = (): JSX.Element => {
               }[addClicked]
             }
           </S.AddAmount>
+          <S.Warning display={testValue < 50 ? "none" : "block"}>
+            쓰레기 배출량이 너무 많아요
+          </S.Warning>
         </S.DescriptionBox>
       </S.VisualizeContainer>
     </S.Wrapper>
