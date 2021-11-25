@@ -25,17 +25,18 @@ export const DetailImage = styled.div`
 `;
 
 export const DescriptionBox = styled.div`
-  padding: 15px 3px;
+  padding: 20px 6px;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
   border-top: 1px solid ${color.blue000};
-  row-gap: 15px;
+  row-gap: 4px;
 `;
 
 export const Box = styled.div`
   display: flex;
   gap: 5px;
+  align-items: center;
 `;
 
 export const Material = styled.div`
