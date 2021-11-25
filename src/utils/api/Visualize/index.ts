@@ -1,8 +1,8 @@
 import instance from "../Default";
 
-export const getDreamsWrittenToday = async () => {
+export const getMyLitter = async () => {
     try {
-      return await instance.get(`그거 주소`);
+      return await instance.get("/");
     } catch (error) {
       throw error;
     }

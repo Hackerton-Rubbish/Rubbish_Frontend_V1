@@ -9,8 +9,7 @@ const Write: FC = (): JSX.Element => {
   const handFileChange = (e: any) => {
     setSelectedFile(e.target.files[0]);
     setFileImage(URL.createObjectURL(e.target.files[0]));
-  };
-
+    
   const handleFileUpload = () => {
     //     const formData = new FormData();
     //     formData.append("userfile", selectedFile, selectedFile.name);
