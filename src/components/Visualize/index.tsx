@@ -1,7 +1,8 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import * as S from "./styles";
 import { Litter, Plus, Minus, Close } from "../../assets";
 import { color } from "../../style";
+import { getMyLitter } from "../../utils/api/Visualize";
 
 const Visualize: FC = (): JSX.Element => {
   const [addClicked, setAddClicked] = useState<string>("false");
@@ -17,6 +18,10 @@ const Visualize: FC = (): JSX.Element => {
     setAddClicked("false");
     setTestValue(testValue + Number(value));
   };
+
+  useEffect(() => {
+    getMyLitter().then((res) => console.log(res))
+  }, [])
 
   return (
     <S.Wrapper>
