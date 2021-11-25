@@ -1,4 +1,5 @@
 import axios, { AxiosError } from "axios";
+import { refresh, refreshError } from "../refresh";
 
 export const request = axios.create({
   baseURL: "baseURL",
@@ -9,6 +10,8 @@ const instance = axios.create({
   baseURL: "baseURL",
   timeout: 100000,
 });
+
+instance.interceptors.request.use(refresh, refreshError);
 
 instance.interceptors.response.use(
   function (response) {
