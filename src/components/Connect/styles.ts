@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { color } from "../../style";
+import { Link } from "react-router-dom";
 
 export const Wrapper = styled.div`
   width: 80%;
@@ -30,7 +31,7 @@ export const Description = styled.div`
   }
 `;
 
-export const Post = styled.div`
+export const Post = styled(Link)`
   background-color: ${color.blue000};
   height: 35px;
   width: 100px;
@@ -40,6 +41,8 @@ export const Post = styled.div`
   color: ${color.gray000};
   border-radius: 5px;
   cursor: pointer;
+  outline: none;
+  text-decoration: none;
 `;
 
 export const Title = styled.div`

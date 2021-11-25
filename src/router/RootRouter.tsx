@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import { VisualizePage, ChallengePage, ConnectionPage } from "../pages";
+import { VisualizePage, ChallengePage, ConnectionPage, ConnectionWritePage } from "../pages";
 import LoginPage from "../pages/Login";
 import RegisterPage from "../pages/Register";
 
@@ -14,6 +14,7 @@ const RootRouter = (): JSX.Element => {
           <Route path="/connection" element={<ConnectionPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/connection/write" element={<ConnectionWritePage />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
