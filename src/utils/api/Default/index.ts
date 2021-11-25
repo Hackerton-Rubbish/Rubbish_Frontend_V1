@@ -2,12 +2,12 @@ import axios, { AxiosError } from "axios";
 import { refresh, refreshError } from "../refresh";
 
 export const request = axios.create({
-  baseURL: "baseURL",
+  baseURL: "",
   timeout: 100000,
 });
 
 const instance = axios.create({
-  baseURL: "baseURL",
+  baseURL: "",
   timeout: 100000,
 });
 
