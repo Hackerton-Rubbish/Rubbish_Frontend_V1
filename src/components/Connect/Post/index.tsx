@@ -10,9 +10,9 @@ interface Props {
 
 const Post: FC<Props> = ({ Rubbish, Address, Name, LeftItem }): JSX.Element => {
   return (
-    <S.PostContainer>
+    <S.PostContainer to="/connection/detail">
       <S.ImgBox>
-
+        
       </S.ImgBox>
       <S.DescriptionBox>
         <S.RubbishName>{Rubbish}</S.RubbishName>

@@ -1,15 +1,14 @@
 import styled from "@emotion/styled";
-import { ImageInput } from "../../../assets";
 import { color } from "../../../style";
 
 export const Wrapper = styled.div`
   width: 800px;
   margin: 0 auto;
-  height: auto;
   display: flex;
   align-items: center;
   gap: 60px;
   height: 80vh;
+  min-height: 900px;
 `;
 
 export const ImageInputContainer = styled.div`
@@ -21,7 +20,7 @@ export const ImageInputContainer = styled.div`
 export const PreviewImage = styled.div`
   min-width: 350px;
   min-height: 250px;
-  border: 1px solid black;
+  border: 1px solid ${color.gray100};
   border-radius: 5px;
   display: flex;
   justify-content: center;
