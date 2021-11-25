@@ -1,12 +1,25 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import * as S from "./styles";
 import Post from "./Post";
+import { getConnectionList } from "../../utils/api/Connect";
 
 const Connect: FC = (): JSX.Element => {
+  const [data, setData] = useState<Array<object>>();
   const testArray = [];
   for (let i = 0; i < 16; i++) {
     testArray.push(i);
   }
+
+  useEffect(() => {
+    getConnectionList()
+      .then((res) => {
+        setData(res?.data.data.postList);
+        console.log(res)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return (
     <S.Wrapper>

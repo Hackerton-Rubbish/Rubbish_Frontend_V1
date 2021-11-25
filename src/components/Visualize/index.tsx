@@ -8,6 +8,9 @@ const Visualize: FC = (): JSX.Element => {
   const [addClicked, setAddClicked] = useState<string>("false");
   const [ArithIndex, setArithIndex] = useState(0);
   const [litter, setLitter] = useState(0);
+  const date = new Date();
+  const year = Number(`${date.getFullYear()}`.slice(2, 4));
+  const month = date.getMonth();
 
   const LitterUnitArr = [1, 5, 10];
   const setMath = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -18,9 +21,9 @@ const Visualize: FC = (): JSX.Element => {
     const data = ArithIndex === 0 ? value : -value;
     setAddClicked("false");
     if (litter <= 0 && ArithIndex === 1) return;
-    postMyLitter(21, 11, data)
+    postMyLitter(year, month, data)
       .then(() => {
-        getMyLitter(21, 11)
+        getMyLitter(year, month)
           .then((res) => setLitter(res.data.data.amount))
           .catch((err) => console.log(err));
       })
@@ -28,10 +31,11 @@ const Visualize: FC = (): JSX.Element => {
   };
 
   useEffect(() => {
-    getMyLitter(21, 11)
+    getMyLitter(year, month)
       .then((res) => setLitter(res.data.data.amount))
       .catch((err) => console.log(err));
   }, [litter]);
+
 
   return (
     <S.Wrapper>

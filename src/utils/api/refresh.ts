@@ -7,10 +7,13 @@ const refresh = async (config: any): Promise<AxiosRequestConfig> => {
   return config;
 };
 
-// const refreshError = (err: any) => {
-//   localStorage.removeItem("expireAt");
-//   localStorage.removeItem("access_token");
-//   localStorage.removeItem("refresh_token");
-// };
+const forConnection = async (config: any): Promise<AxiosRequestConfig> => {
+  let accessToken = localStorage.getItem("access_token");
 
-export { refresh };
+  config.headers["Authorization"] = `Token ${accessToken}`;
+  config.headers["Content-Type"] = "multipart/form-data";
+
+  return config;
+};
+
+export { refresh, forConnection };
