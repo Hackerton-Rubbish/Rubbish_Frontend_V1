@@ -24,7 +24,6 @@ export const DescriptionBox = styled.div`
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    /* place-items: center; */
     align-items: center;
     padding: 10px 30px;
 `;

@@ -3,6 +3,7 @@ import { color } from "../../style";
 
 export const Wrapper = styled.div`
   width: 80%;
+  min-height: 1280px;
   margin: 0 auto;
   padding-top: 50px;
   display: flex;
