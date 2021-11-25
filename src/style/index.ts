@@ -9,5 +9,6 @@ export const color = {
   backgroundBlue: '#E8EEF6',    // 제일 연한 파란색 (배경에 주로 사용)
   titleGray: '#9B9EAB',         // 약간 진한 회색 (조금 강조해야하는 부분에 주로 사용)
   mainGray: '#B6B6B6',          // 연한 회색 (input place 등 여러 곳에 사용)
-  red000: "#FF8D8D"
+  red000: "#FF8D8D",
+  deleteRed: '#FF5C5C'
 };
