@@ -10,13 +10,16 @@ const Visualize: FC = (): JSX.Element => {
   const [litter, setLitter] = useState(0);
 
   const LitterUnitArr = ["1", "5", "10"];
-  const setMath = (e: any) => {
+  const setMath = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
   const HandleLitterUnit = (value: string) => {
     setAddClicked("false");
-    setLitter(litter + Number(value));
+    if (litter <= 0 && ArithIndex === 1) return;
+    setLitter(
+      ArithIndex === 0 ? litter + Number(value) : litter - Number(value)
+    );
   };
 
   useEffect(() => {
@@ -28,7 +31,10 @@ const Visualize: FC = (): JSX.Element => {
   return (
     <S.Wrapper>
       <S.VisualizeContainer>
-        <S.LitterBackground width={`calc(${litter}%)`}>
+        <S.LitterBackground
+          width={`calc(${litter}%)`}
+          background={litter < 50 ? `${color.blue000}` : "red"}
+        >
           <img src={Litter} />
         </S.LitterBackground>
         <S.DescriptionBox>
@@ -38,8 +44,11 @@ const Visualize: FC = (): JSX.Element => {
           </S.InformationText>
           <S.Amount>{litter}L</S.Amount>
           <S.AddAmount
-            onClick={() => setAddClicked("true")}
-            width={addClicked === "false" ? "190px" : "600px"}
+            onClick={() => {
+              setAddClicked("true");
+              setArithIndex(0);
+            }}
+            width={addClicked === "false" ? "150px" : "600px"}
             background={
               addClicked === "false" ? `${color.blue000}` : `${color.gray000}`
             }
@@ -49,14 +58,14 @@ const Visualize: FC = (): JSX.Element => {
                 : "0px 4px 4px rgba(0, 0, 0, 0.25)"
             }
             justify={addClicked === "false" ? "center" : "space-between"}
-            padding={addClicked === "false" ? "0" : "0 20px"}
+            padding={addClicked === "false" ? "0" : "0 15px"}
           >
             {
               {
                 false: <>추가하기</>,
                 true: (
                   <>
-                    <S.Arithmatic onClick={(e) => setMath(e)}>
+                    <S.Arithmatic onClick={(e: React.MouseEvent<HTMLDivElement>) => setMath(e)}>
                       <S.MathUnit
                         background={
                           ArithIndex === 0 ? `${color.gray100}` : "none"
@@ -82,7 +91,12 @@ const Visualize: FC = (): JSX.Element => {
                           </S.LitterUnit>
                         );
                       })}
-                      <S.CloseButton onClick={() => setAddClicked("false")}>
+                      <S.CloseButton
+                        onClick={() => {
+                          setAddClicked("false");
+                          setArithIndex(0);
+                        }}
+                      >
                         <img src={Close} />
                       </S.CloseButton>
                     </S.UnitBox>
